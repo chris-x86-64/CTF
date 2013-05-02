@@ -1,0 +1,6 @@
+---
+sql:
+    username: "ctf"
+    password: "ctfpassword"
+    dbname: "ctf"
+...
