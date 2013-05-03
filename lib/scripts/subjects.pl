@@ -21,8 +21,7 @@ sub fetchSubjectData {
 		$conf->{username},
 		$conf->{password}
 	);
-	my $query = "SELECT * FROM subjects WHERE subid = '$subid'";
-	return $dbh->selectrow_hashref($query);
+	return $dbh->selectrow_hashref("SELECT * FROM subjects WHERE subid = '$subid'");
 }
 
 my $tempfile = 'templates/main.tt';
