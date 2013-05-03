@@ -1,0 +1,18 @@
+<h2>Welcome, [% username %]</h2>
+
+<table id="grades">
+<tr>
+  <th>Subject</th>
+  <th>Cemester</th>
+  <th>Grade</th>
+  <th>Status</th>
+</tr>
+[% FOREACH grades %]
+<tr>
+<td>[% subject %]</td>
+<td>[% cemester %]</td>
+<td>[% grade %]</td>
+<td>[% status %]</td>
+</tr>
+[% END %]
+</table>
