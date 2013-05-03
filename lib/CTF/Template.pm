@@ -10,8 +10,8 @@ sub new {
 	my ($class) = @_;
 	my $self = bless {
 		tmpl => Template->new({ENCODING => 'utf-8', 
-#			PRE_PROCESS => 'templates/header.tt',
-#			POST_PROCESS => 'templates/footer.tt',
+			PRE_PROCESS => 'templates/header.tt',
+			POST_PROCESS => 'templates/footer.tt',
 		}),
 	}, $class;
 	return $self;
