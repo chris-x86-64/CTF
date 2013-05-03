@@ -1,0 +1,18 @@
+<p>
+<ul>
+<li><a href="index.pl?mode=subjects&subid=LAI">Linear Algebra I</a></li>
+<li><a href="index.pl?mode=subjects&subid=PHY">Physics</a></li>
+<li><a href="index.pl?mode=subjects&subid=CLI">Calculus I</a></li>
+<li><a href="index.pl?mode=subjects&subid=PGI">Programming I</a></li>
+<li><a href="index.pl?mode=subjects&subid=MON">Introduction to Monty Python</a></li>
+<li><a href="index.pl?mode=subjects&subid=SLO">Slacking Off</a></li>
+</ul> 
+</p>
+
+
+[% IF subject %]
+<hr>
+	<h3>[% subject.title %]</h3>
+	<p>[% subject.teacher %] ([% subject.email %])</p>
+	<p>[% subject.description %]</p>
+[% END %]

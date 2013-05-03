@@ -43,7 +43,7 @@ sub setGrades {
 	my $dbh = $self->{dbh};
 	my $result;
 	eval {
-		$result = $dbh->update('grades', { grades => $params->{new_json} });
+		$result = $dbh->update('grades', { grades_json => $params->{new_json} });
 	};
 	return $@ if ($@);
 	return $result;

@@ -31,10 +31,12 @@ else {
 	} else {
 
 		my $scriptfile = $params->{'mode'};
-		if ($scriptfile =~ /\x00$/);
-			# Null-byte poisoning
-		}
-		$scriptfile =~ s/[^\w]//g;
+#		if ($scriptfile =~ /\x00$/) {
+#			$scriptfile =~ s/[^\w]//g;
+#			# Null-byte poisoning simulation.
+#			require './dummy/' . '$scriptfile';
+#		}
+#		$scriptfile =~ s/[^\w]//g;
 		eval {
 			require './lib/scripts/' . $scriptfile . '.pl';
 		};

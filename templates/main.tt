@@ -1,10 +1,11 @@
 [% IF loggedin == 0 %]
 	[% INCLUDE templates/not_logged_in.tt %]
 	[% message %]
+[% ELSIF grades %]
+	[% INCLUDE templates/grades.tt %]
+[% ELSIF show_subjects %]
+	[% INCLUDE templates/subjects.tt %]
 [% ELSE %]
-	[% IF teacher == 1 %]
-		[% INCLUDE templates/grades_editable.tt %]
-	[% ELSE %]
-		[% INCLUDE templates/grades_viewonly.tt %]
-	[% END %]
+	<h2>Welcome, [% username %].</h2>
+	<p>Choose your action from the Top Menu.</p>
 [% END %]

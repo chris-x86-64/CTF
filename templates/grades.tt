@@ -12,7 +12,7 @@
 <td>[% subject %]</td>
 <td>[% cemester %]</td>
 <td>[% grade %]</td>
-<td>[% status %]</td>
+<td>[% IF grade == 'F' %]FAILED[% ELSE %]PASSED[% END %]</td>
 </tr>
 [% END %]
 </table>

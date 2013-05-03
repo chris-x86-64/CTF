@@ -16,8 +16,8 @@
    [% ELSE %]
    <li><a href="index.pl?mode=login">Login</a></li>
    [% END %]
-   <li><a href="#">Archives</a></li>
-   <li><a href="#">Sitemap</a></li>
+   <li><a href="index.pl?mode=grades">Grades</a></li>
+   <li><a href="index.pl?mode=subjects">Subjects</a></li>
   </ul>
  </div>
 </div>
