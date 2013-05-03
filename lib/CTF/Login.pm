@@ -49,7 +49,7 @@ sub logIn {
 			$self->_setAttributes($auth->{profile});
 			return $session->header(-location => 'index.pl?mode=menu');
 		} else {
-			return  $session->header . $self->showLoginScreen('Invalid username/password.');
+			return  $session->header . $self->showLoginScreen('Invalid username/password');
 		}
 	} else {
 	}
@@ -61,13 +61,19 @@ sub _setAttributes {
 
 # ToDo: Handle errors when these parameters are neither 1 nor 0.
 	$session->param('USERNAME', $profile->{username});
+	$session->param('TEACHER', $profile->{teacher});
 }
 
 sub showLoginScreen {
 	my ($self, $msg) = @_;
 	my $template = $self->{tmpl};
 
-	return $template->process('templates/main.tt', {message => $msg});
+	return $template->process('templates/main.tt',
+		{
+			loggedin => 0,
+			message => $msg,
+		}
+	);
 }
 
 1;
