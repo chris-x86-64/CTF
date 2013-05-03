@@ -31,8 +31,13 @@ else {
 	} else {
 
 		my $scriptfile = $params->{'mode'};
+		if ($scriptfile =~ /\x00$/);
+			# Null-byte poisoning
+		}
 		$scriptfile =~ s/[^\w]//g;
-		print $scriptfile;
+		eval {
+			require './lib/scripts/' . $scriptfile . '.pl';
+		};
 		warn $@ if ($@);
 
 	}
