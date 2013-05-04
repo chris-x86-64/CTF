@@ -3,4 +3,6 @@ sql:
     username: "ctf"
     password: "ctfpassword"
     dbname: "ctf"
+
+passphrase: "SQLInjectionIsAWESOME"
 ...
