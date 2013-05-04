@@ -10,14 +10,13 @@ use DBIx::Simple;
 use SQL::Abstract;
 use YAML::Syck;
 use JSON::XS;
-use Data::Dumper;
 
 my @ISA = qw(Exporter);
 my @EXPORT = ();
 
 sub new {
 	my ($class) = @_;
-	my ($confFile, $statementsFile) = (! -e '../etc/config.yml') ? ('etc/config.yml', 'etc/sql_statements.yml') : ('../etc/config.yml', '../etc/sql_statements.yml');
+	my $confFile = (! -e '../etc/config.yml') ? 'etc/config.yml' : '../etc/config.yml';
 	my $conf = YAML::Syck::LoadFile($confFile);
 	my $dbh = DBIx::Simple->connect(
 		"dbi:mysql:$conf->{sql}->{dbname}",
@@ -38,14 +37,4 @@ sub getGrades {
 	return decode_json($result->[0]);
 }
 
-sub setGrades {
-	my ($self, $params) = @_;
-	my $dbh = $self->{dbh};
-	my $result;
-	eval {
-		$result = $dbh->update('grades', { grades_json => $params->{new_json} });
-	};
-	return $@ if ($@);
-	return $result;
-}
 1;
