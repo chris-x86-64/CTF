@@ -13,11 +13,13 @@
 				<li><a href="http://www.minimalistic-design.info">Web Design Directory</a></li>
 				<li><a href="http://www.historyexplorer.net">History Timelines</a></li>
 				<li><a href="http://www.minimalistic-design.net">Free templates</a></li>
+				<li>Design by <a href="http://www.minimalistic-design.net">Minimalistic Design</a>
 				</ul>
 	</div>
 		
     <div class="box">
-	   <div style="font-size: 0.8em;">Design by <a href="http://www.minimalistic-design.net">Minimalistic Design</a></div>
+		<div style="font-size: 1.0em;">CTF Mission created by <a href="https://x86-64.jp/">Christopher SMITH</a></div>
+		<div style="font-size: 1.0em;"><a href="http://tkbctf.info">TKB CTF Main Site</a></li>
 	</div>
 </div>
 </div>

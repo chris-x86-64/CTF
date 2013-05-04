@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>Minimalistic Design Template</title>
+<title>University of Hakurei - Grading System</title>
 <link rel="stylesheet" type="text/css" href="templates/style.css" media="screen" />
 </head>
 <body>
@@ -16,8 +16,10 @@
    [% ELSE %]
    <li><a href="index.pl?mode=login">Login</a></li>
    [% END %]
+   [% IF loggedin == 1 %]
    <li><a href="index.pl?mode=grades">Grades</a></li>
    <li><a href="index.pl?mode=subjects">Subjects</a></li>
+   [% END %]
   </ul>
  </div>
 </div>

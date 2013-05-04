@@ -5,4 +5,5 @@ sql:
     dbname: "ctf"
 
 passphrase: "SQLInjectionIsAWESOME"
+points: 400
 ...
