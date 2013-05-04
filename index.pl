@@ -5,7 +5,6 @@ use warnings;
 use CGI;
 use CGI::Carp qw/fatalsToBrowser warningsToBrowser/; # Remove this on production state.
 use CGI::Session ('-ip_match');
-use Data::Dumper;
 
 our $session = CGI::Session->load;
 our $q = CGI->new;
@@ -31,17 +30,11 @@ else {
 	} else {
 
 		my $scriptfile = $params->{'mode'};
-#		if ($scriptfile =~ /\x00$/) {
-#			$scriptfile =~ s/[^\w]//g;
-#			# Null-byte poisoning simulation.
-#			require './dummy/' . '$scriptfile';
-#		}
-#		$scriptfile =~ s/[^\w]//g;
+		$scriptfile =~ s/[^\w]//g;
 		eval {
 			require './lib/scripts/' . $scriptfile . '.pl';
 		};
-		warn $@ if ($@);
-
+		die $@ if ($@);
 	}
 
 }
